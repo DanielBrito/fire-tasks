@@ -25,14 +25,18 @@ export default createGlobalStyle`
 
   :root{
     --yellow-firebase: #FFCA28;
+    --light-yellow-firebase: #FFCA28BB;
     --navy-blue-firebase: #2C384A;
     --orange-firebase: #F57C00;
+    --orange-hover-firebase: #ff5722;
     --dark-gray: #222;
-    --light-yellow: rgba(241, 250, 140, 0.8);
+    --light-blue-firebase: #039BE5;
+    --light-blue-hover-firebase: #056bf9;
     --white: #fff;
+    --white-transparent: rgba(255, 255, 255, 0.8);
+    --red: #d92027;
 
     --background-gradient-primary: rgba(253, 29, 29, 0);
-    --background-gradient-secondary: rgba(0, 0, 0, 0.6);
-
+    --background-gradient-secondary: rgba(0, 0, 0, 0.6)
   }
 `;

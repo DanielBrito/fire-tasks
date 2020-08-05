@@ -1,25 +1,19 @@
 import React from "react";
-
 import {
   Container,
+  PriorityLabel,
   RemoveButton,
   EditButton,
   Description,
-  Priority,
 } from "./styles";
 
 const Task = () => {
   return (
     <Container>
-      <Priority>1</Priority>
+      <PriorityLabel>1</PriorityLabel>
       <RemoveButton title="Remove" />
       <EditButton title="Edit" />
-      <Description>
-        Lorem ipsum dolor sit amet consectur a adipisicing elit. Consectetur
-        quidem quam ducimus nostrum necessitatibus sunt nobis! Fuga velit
-        mollitia iure omnis quo suscipit accusamus, commodi itaque adipisci
-        totam animi facilis!
-      </Description>
+      <Description>Implement Fire Tasks</Description>
     </Container>
   );
 };

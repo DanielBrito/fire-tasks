@@ -1,9 +1,7 @@
 import React from "react";
-
-import { Container, Header, FireIcon, TasksList } from "./styles";
-
-import Task from "./components/Task";
 import Form from "./components/Form";
+import TaskList from "./components/TaskList";
+import { Container, Header, FireIcon } from "./styles";
 
 function App() {
   return (
@@ -12,20 +10,8 @@ function App() {
         <FireIcon />
         Fire Tasks
       </Header>
-      <TasksList>
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-      </TasksList>
+      <Form />
+      <TaskList />
     </Container>
   );
 }
