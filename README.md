@@ -1,5 +1,5 @@
 # :fire: Fire Tasks
-To-do list application using React and Firebase.
+To-do list application using React, Firebase and Styled Components.
 
 ### ✔️ Main features
 
