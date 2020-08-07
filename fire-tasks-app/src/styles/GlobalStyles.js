@@ -39,4 +39,17 @@ export default createGlobalStyle`
     --background-gradient-primary: rgba(253, 29, 29, 0);
     --background-gradient-secondary: rgba(0, 0, 0, 0.6)
   }
+
+  ::-webkit-scrollbar{
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background-color: rgba(0, 0, 0, 0.7)
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: var(--dark-gray);
+    border-radius: 10px;
+  }
 `;

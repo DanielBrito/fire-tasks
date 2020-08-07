@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import { Add } from "styled-icons/material";
+import { Add, Save } from "styled-icons/material";
 
-export const Container = styled.div`
+export const Form = styled.form`
   padding: 20px;
   height: auto;
   margin: auto;
@@ -66,6 +66,11 @@ export const PrioritySelector = styled.select`
 `;
 
 export const AddIcon = styled(Add)`
+  width: 25px;
+  height: 25px;
+`;
+
+export const SaveIcon = styled(Save)`
   width: 25px;
   height: 25px;
 `;
