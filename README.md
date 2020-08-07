@@ -1,6 +1,8 @@
 # :fire: Fire Tasks
 
-An awesome to-do list application using React, Firebase and Styled Components.
+An awesome to-do list application using React (with Hooks), Firebase and Styled Components.
+
+![Fire Tasks Screencast](preview.gif)
 
 ### :zap: Main features
 
