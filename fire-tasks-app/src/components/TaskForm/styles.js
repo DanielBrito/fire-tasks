@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-import { Add, Save } from "styled-icons/material";
+import { Add } from "styled-icons/material";
+import { Save } from "styled-icons/feather";
+import { Cancel } from "styled-icons/typicons";
 
 export const Form = styled.form`
   padding: 20px;
@@ -8,7 +10,7 @@ export const Form = styled.form`
   margin: auto;
   margin-bottom: 15px;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   font-size: 1.1em;
   color: var(--dark-gray);
   background-color: var(--orange-firebase);
@@ -22,13 +24,30 @@ export const AddButton = styled.button`
   margin-left: 10px;
   border-radius: 5px;
   padding: 8px 10px;
-  background-color: var(--light-blue-firebase);
+  background-color: var(--navy-blue-firebase);
   color: var(--white);
   transition: 0.2s ease-out;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--light-blue-hover-firebase);
+    background-color: var(--navy-blue-hover-firebase);
+    color: var(--white);
+    transition: 0.2s ease-out;
+  }
+`;
+
+export const CancelButton = styled.button`
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 8px 10px;
+  background-color: var(--red);
+  color: var(--white);
+  transition: 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--red-hover);
     color: var(--white);
     transition: 0.2s ease-out;
   }
@@ -71,6 +90,11 @@ export const AddIcon = styled(Add)`
 `;
 
 export const SaveIcon = styled(Save)`
+  width: 25px;
+  height: 25px;
+`;
+
+export const CancelIcon = styled(Cancel)`
   width: 25px;
   height: 25px;
 `;

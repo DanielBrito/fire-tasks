@@ -10,14 +10,14 @@ ReactDOM.render(
   <React.StrictMode>
     <ToastContainer
       position="bottom-center"
-      autoClose={3000}
+      autoClose={2000}
       hideProgressBar
       newestOnTop={false}
       closeOnClick
       rtl={false}
       pauseOnFocusLoss
       pauseOnHover
-      style={{ width: "290px" }}
+      style={{ width: "250px" }}
     />
     <App />
     <GlobalStyles />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import TaskListContextProvider from "./contexts/TaskListContext";
 
@@ -10,6 +10,11 @@ import TaskList from "./components/TaskList";
 import { Container } from "./styles";
 
 const App = () => {
+  useEffect(() => {
+    // Cleaning data when application starts:
+    localStorage.clear();
+  }, []);
+
   return (
     <TaskListContextProvider>
       <Container>

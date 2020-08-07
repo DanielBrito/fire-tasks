@@ -58,7 +58,7 @@ export const Description = styled.p`
 `;
 
 export const PriorityLabel = styled.span`
-  background-color: var(--navy-blue-firebase);
+  background-color: var(--light-blue-firebase);
   border-radius: 50%;
   color: var(--white);
   font-weight: bold;

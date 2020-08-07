@@ -20,11 +20,16 @@ const Task = ({ task }) => {
     toast.success("Task successfully removed");
   };
 
+  const handleEdit = () => {
+    findItem(task.id);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container>
       <PriorityLabel>{task.priority}</PriorityLabel>
       <RemoveButton title="Remove" onClick={() => handleRemove()} />
-      <EditButton title="Edit" onClick={() => findItem(task.id)} />
+      <EditButton title="Edit" onClick={() => handleEdit()} />
       <Description>{task.title}</Description>
     </Container>
   );

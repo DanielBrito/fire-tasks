@@ -25,10 +25,6 @@ export const Logo = styled.div`
     text-align: center;
     align-content: center;
     padding: 10px 0px 20px 0px;
-
-    &:hover {
-      text-shadow: 1px 1px 2px var(--yellow-firebase);
-    }
   }
 `;
 
@@ -41,5 +37,6 @@ export const FireIcon = styled(Fire)`
 
   &:hover {
     transform: scale(1.1, 1.1);
+    cursor: pointer;
   }
 `;

@@ -7,7 +7,13 @@ const Header = () => {
     <Container>
       <Logo>
         <span>
-          <FireIcon />
+          <a
+            href="https://github.com/DanielBrito"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FireIcon title="Developed with &hearts; by Daniel Brito" />
+          </a>
           Fire Tasks
         </span>
       </Logo>

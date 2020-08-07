@@ -27,6 +27,7 @@ export default createGlobalStyle`
     --yellow-firebase: #FFCA28;
     --light-yellow-firebase: #FFCA28BB;
     --navy-blue-firebase: #2C384A;
+    --navy-blue-hover-firebase: #1f3841;
     --orange-firebase: #F57C00;
     --orange-hover-firebase: #ff5722;
     --dark-gray: #222;
@@ -34,7 +35,9 @@ export default createGlobalStyle`
     --light-blue-hover-firebase: #056bf9;
     --white: #fff;
     --white-transparent: rgba(255, 255, 255, 0.8);
+    --light-gray: rgba(255, 255, 255, 0.4);
     --red: #d92027;
+    --red-hover: #af101f;
 
     --background-gradient-primary: rgba(253, 29, 29, 0);
     --background-gradient-secondary: rgba(0, 0, 0, 0.6)

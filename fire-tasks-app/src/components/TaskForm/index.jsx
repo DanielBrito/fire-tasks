@@ -11,30 +11,36 @@ import {
   AddIcon,
   SaveIcon,
   PrioritySelector,
+  CancelButton,
+  CancelIcon,
 } from "./styles";
 
 const TaskForm = () => {
   const { addTask, editTask, editItem } = useContext(TaskListContext);
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState("0");
+  const [cancel, setCancel] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!editItem) {
       if (title.trim() === "" || priority === "0") {
-        toast.error("Hmm... There is something missing");
+        toast.error("Hmm... Something is missing");
       } else {
         addTask(title, priority);
-        toast.success("Task saved successfully");
+        toast.success("Task successfully saved");
         setTitle("");
         setPriority("0");
       }
     } else {
       if (title.trim() === "" || priority === "0") {
-        toast.error("Hmm... There is something missing");
+        toast.error("Hmm... Something is missing");
       } else {
         editTask(editItem.id, title, priority);
-        toast.success("Changes saved successfully");
+        if (!cancel) {
+          toast.success("Changes successfully saved");
+        }
+        setCancel(false);
         setTitle("");
         setPriority("0");
       }
@@ -75,6 +81,15 @@ const TaskForm = () => {
       <AddButton type="submit" title="Add task">
         {editItem ? <SaveIcon /> : <AddIcon />}
       </AddButton>
+      {editItem && (
+        <CancelButton
+          type="submit"
+          title="Cancel"
+          onClick={() => setCancel(true)}
+        >
+          <CancelIcon />
+        </CancelButton>
+      )}
     </Form>
   );
 };
