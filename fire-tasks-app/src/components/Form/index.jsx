@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   Container,
@@ -8,11 +10,37 @@ import {
   PrioritySelector,
 } from "./styles";
 
-const Form = () => {
+const Form = (props) => {
+  const { addTask } = props;
+  const [taskName, setTaskName] = useState("");
+  const [taskPriority, setTaskPriority] = useState("0");
+
+  const writeTask = () => {
+    if (taskName.trim() === "" || taskPriority === "0") {
+      toast.error("Hmm... There is something missing");
+    } else {
+      addTask({
+        id: `${Math.floor(Math.random() * 9999)}`,
+        name: taskName,
+        priority: taskPriority,
+      });
+      setTaskName("");
+      setTaskPriority("0");
+    }
+  };
+
   return (
     <Container>
-      <Input maxLength="130" placeholder="New task..." />
-      <PrioritySelector defaultValue="1">
+      <Input
+        maxLength="130"
+        placeholder="Write a new task..."
+        value={taskName}
+        onChange={(e) => setTaskName(e.target.value)}
+      />
+      <PrioritySelector
+        value={taskPriority}
+        onChange={(e) => setTaskPriority(e.target.value)}
+      >
         <option value="0" disabled>
           Task priority
         </option>
@@ -22,7 +50,7 @@ const Form = () => {
         <option value="4">4 - High</option>
         <option value="5">5 - Very High</option>
       </PrioritySelector>
-      <AddButton title="Add task">
+      <AddButton title="Add task" onClick={writeTask}>
         <AddIcon />
       </AddButton>
     </Container>

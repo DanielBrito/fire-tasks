@@ -4,7 +4,7 @@ import ImageBackground from "../assets/estee-janssens-aQfhbxailCs-unsplash.jpg";
 
 export default createGlobalStyle`
   body {
-    background: linear-gradient(-180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+    background: linear-gradient(-180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
       url(${ImageBackground});
     background-attachment: fixed;
     background-size: cover;

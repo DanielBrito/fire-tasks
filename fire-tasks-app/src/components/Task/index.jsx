@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Container,
   PriorityLabel,
@@ -7,13 +8,15 @@ import {
   Description,
 } from "./styles";
 
-const Task = () => {
+const Task = (props) => {
+  const { id, name, priority, removeTask } = props;
+
   return (
     <Container>
-      <PriorityLabel>1</PriorityLabel>
-      <RemoveButton title="Remove" />
+      <PriorityLabel>{priority}</PriorityLabel>
+      <RemoveButton title="Remove" onClick={() => removeTask(id)} />
       <EditButton title="Edit" />
-      <Description>Implement Fire Tasks</Description>
+      <Description>{name}</Description>
     </Container>
   );
 };
