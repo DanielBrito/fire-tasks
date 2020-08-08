@@ -12,7 +12,7 @@ const SortButton = () => {
   const handleSort = () => {
     sortTasks();
     if (tasks.length === 0) {
-      toast.warning("No tasks to be sorted");
+      toast.info("No tasks to be sorted");
     } else {
       sortOrder
         ? toast.info("Most important first")
