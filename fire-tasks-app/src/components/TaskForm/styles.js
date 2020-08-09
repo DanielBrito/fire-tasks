@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import { Add } from "styled-icons/material";
-import { Save } from "styled-icons/feather";
-import { Cancel } from "styled-icons/typicons";
+import { Save } from "styled-icons/boxicons-regular";
+import { Block } from "styled-icons/boxicons-regular";
 
 export const Form = styled.form`
   padding: 20px;
@@ -94,7 +94,7 @@ export const SaveIcon = styled(Save)`
   height: 25px;
 `;
 
-export const CancelIcon = styled(Cancel)`
+export const CancelIcon = styled(Block)`
   width: 25px;
   height: 25px;
 `;
