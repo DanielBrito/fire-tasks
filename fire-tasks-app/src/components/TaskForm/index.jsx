@@ -16,7 +16,9 @@ import {
 } from "./styles";
 
 const TaskForm = () => {
-  const { addTask, editTask, editItem } = useContext(TaskListContext);
+  const { addTask, editTask, editItem, setEditItem } = useContext(
+    TaskListContext
+  );
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState("0");
   const [cancel, setCancel] = useState(false);
@@ -27,6 +29,7 @@ const TaskForm = () => {
       if (title.trim() === "" || priority === "0") {
         toast.error("Hmm... Something is missing");
       } else {
+        console.log("addTask...");
         addTask(title, priority);
         toast.success("Task successfully saved");
         setTitle("");
@@ -36,10 +39,12 @@ const TaskForm = () => {
       if (title.trim() === "" || priority === "0") {
         toast.error("Hmm... Something is missing");
       } else {
-        editTask(editItem.id, title, priority);
+        console.log("editTask...");
         if (!cancel) {
+          editTask(editItem.id, title, priority);
           toast.success("Changes successfully saved");
         }
+        setEditItem(null);
         setCancel(false);
         setTitle("");
         setPriority("0");

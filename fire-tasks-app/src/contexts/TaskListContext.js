@@ -1,25 +1,32 @@
 import React, { createContext, useState, useEffect } from "react";
-import uuid from "uuid";
+
+import { tasksRef } from "../config/firebase";
 
 export const TaskListContext = createContext();
 
 const TaskListContextProvider = (props) => {
-  const initialState = JSON.parse(localStorage.getItem("tasks")) || [];
-
-  const [tasks, setTasks] = useState(initialState);
+  const [tasks, setTasks] = useState([]);
   const [editItem, setEditItem] = useState(null);
   const [sortOrder, setSortOrder] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
+    tasksRef.orderBy("priority", "desc").onSnapshot((snapshot) => {
+      const newTasks = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setTasks(newTasks);
+    });
+  }, []);
 
   const addTask = (title, priority) => {
-    setTasks([{ id: uuid(), title: title, priority: priority }, ...tasks]);
+    tasksRef.add({ title: title, priority: priority }).then(() => {
+      setSortOrder(false);
+    });
   };
 
   const removeTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+    tasksRef.doc(id).delete();
   };
 
   const findItem = (id) => {
@@ -28,12 +35,12 @@ const TaskListContextProvider = (props) => {
   };
 
   const editTask = (id, title, priority) => {
-    const newTasks = tasks.map((task) =>
-      task.id === id ? { id, title, priority } : task
-    );
-
-    setTasks(newTasks);
-    setEditItem(null);
+    tasksRef
+      .doc(id)
+      .update({ title: title, priority: priority })
+      .then(() => {
+        setEditItem(null);
+      });
   };
 
   const sortTasks = () => {
@@ -60,6 +67,7 @@ const TaskListContextProvider = (props) => {
         findItem,
         editTask,
         editItem,
+        setEditItem,
         sortTasks,
         sortOrder,
       }}
