@@ -29,7 +29,6 @@ const TaskForm = () => {
       if (title.trim() === "" || priority === "0") {
         toast.error("Hmm... Something is missing");
       } else {
-        console.log("addTask...");
         addTask(title, priority);
         toast.success("Task successfully saved");
         setTitle("");
@@ -39,7 +38,6 @@ const TaskForm = () => {
       if (title.trim() === "" || priority === "0") {
         toast.error("Hmm... Something is missing");
       } else {
-        console.log("editTask...");
         if (!cancel) {
           editTask(editItem.id, title, priority);
           toast.success("Changes successfully saved");

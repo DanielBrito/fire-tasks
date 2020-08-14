@@ -10,13 +10,26 @@ const TaskListContextProvider = (props) => {
   const [sortOrder, setSortOrder] = useState(true);
 
   useEffect(() => {
-    tasksRef.orderBy("priority", "desc").onSnapshot((snapshot) => {
-      const newTasks = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setTasks(newTasks);
+    // Creating a subscription to Firestore:
+    const unsubscribe = tasksRef
+      .orderBy("priority", "desc")
+      .onSnapshot((snapshot) => {
+        const newTasks = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setTasks(newTasks);
+      });
+
+    // Cleaning the database when the application starts:
+    tasksRef.get().then((snapshot) => {
+      snapshot.forEach((data) => {
+        data.ref.delete();
+      });
     });
+
+    // Simulating componentWillUnmount:
+    return () => unsubscribe();
   }, []);
 
   const addTask = (title, priority) => {
