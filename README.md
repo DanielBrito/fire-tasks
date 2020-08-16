@@ -2,6 +2,8 @@
 
 An awesome to-do list application using React (with Hooks), Firebase and Styled Components.
 
+A [live demo](https://fire-tasks-a3674.web.app/) is worth a thousand pictures.
+
 ![Fire Tasks Screencast](preview.gif)
 
 ### :zap: Main features
