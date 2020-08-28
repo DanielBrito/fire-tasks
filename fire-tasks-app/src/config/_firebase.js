@@ -1,5 +1,5 @@
 import firebase from "firebase/app";
-import "firebase/firestore";
+import "firebase/firebase-firestore";
 
 // Set your app configuration:
 var firebaseConfig = {
@@ -14,6 +14,6 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const databaseRef = firebase.database().ref();
+const databaseRef = firebase.firestore();
 
-export const tasksRef = databaseRef.child("tasks");
+export const tasksRef = databaseRef.collection("tasks");
