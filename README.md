@@ -1,8 +1,8 @@
 # :fire: Fire Tasks
 
-**Fire Tasks** is an awesome task manager built with ReactJS, Styled Components and Firestore.
+**Fire Tasks** is a nice task manager built with ReactJS, Styled Components and Firestore.
 
-Check out [this playlist](https://www.youtube.com/playlist?list=PLckh4uyjCOmhoNX55YHSDAlVW6cRjkwT_) on YouTube with the step by step implementation, which was recorded for educational purposes.
+Check out [this playlist](https://www.youtube.com/playlist?list=PLckh4uyjCOmhoNX55YHSDAlVW6cRjkwT_) on YouTube with the step by step implementation, which was recorded with educational purposes.
 
 ## Preview
 
