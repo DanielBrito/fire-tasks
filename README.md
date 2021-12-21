@@ -4,7 +4,7 @@
 
 Check out [this playlist](https://www.youtube.com/playlist?list=PLckh4uyjCOmhoNX55YHSDAlVW6cRjkwT_) on YouTube with the step by step implementation, which was recorded with educational purposes.
 
-## Preview
+## :eyes: Preview
 
 A [live demo](https://fire-tasks-a3674.web.app/) is worth a thousand pictures.
 
